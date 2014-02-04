@@ -6,4 +6,9 @@ class TestController extends Controller
     {
         $this->render('index');
     }
+    
+    public function actionTest()
+    {
+        echo 1;
+    }
 }
