@@ -1,5 +1,7 @@
 <?php
 
+Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
+
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 
@@ -8,6 +10,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'My test task',
+        'defaultController'=>'test',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -20,14 +23,17 @@ return array(
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		/*
+		 
 		'gii'=>array(
-			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
-			// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('127.0.0.1','::1'),
+                    'class'=>'system.gii.GiiModule',
+                    'password'=>'test',
+                    // If removed, Gii defaults to localhost only. Edit carefully to taste.
+                    'ipFilters'=>array('127.0.0.1','::1'),
+//                        'generatorPaths'=>array(
+//                            'bootstrap.gii',
+//                        ),
 		),
-		*/
+		 
 	),
 
 	// application components
@@ -75,8 +81,10 @@ return array(
 				*/
 			),
 		),
+            'bootstrap'=>array(
+               'class'=>'bootstrap.components.Bootstrap',
+          ),
 	),
-
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
 	'params'=>array(
