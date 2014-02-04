@@ -11,9 +11,16 @@ return array(
 
 	// application components
 	'components'=>array(
-		'db'=>array(
-			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
+                    'db'=>array(
+                    'tablePrefix'=>'t_',
+                    'connectionString' => 'pgsql:host=localhost;port=5432;dbname=test',
+                    'username' => 'ferz',
+                    'password' => 'knowill',
+                    'charset' => 'utf8',
+                    'enableProfiling'=>true,
+                    'enableParamLogging' => true,
 		),
+            
 		// uncomment the following to use a MySQL database
 		/*
 		'db'=>array(
